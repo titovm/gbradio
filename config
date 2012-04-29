@@ -1,0 +1,6 @@
+radio_name = "Radio Name"
+radio_url = "http://www.radio.ru"
+
+radio_id = "radio_id"
+radio_host = "127.0.0.1"
+radio_pass = "hackme"
