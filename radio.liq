@@ -5,7 +5,7 @@ set("init.daemon",true)
 set("log.stdout",true)
 set("log.level",3)
 set("log.file",true)
-%include "/home/mark/gbradio/library.liq"
+%include "library.liq"
 set("server.telnet",true)
 set("server.telnet.bind_addr","0.0.0.0")
 

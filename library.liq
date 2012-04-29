@@ -1,4 +1,4 @@
-%include "/home/mark/radio/config"
+%include "config"
 
 # This function is called when
 # a new metadata block is passed in
