@@ -73,7 +73,7 @@ def outputs(s) =
 
   # An output in AAC+ at 32 kbits to the "my_radio.aac"
   # mountpoint
-  output.icecast(%aacplus(channels=2, samplerate=44100, bitrate=64), mount="radio1",s)
+  output.icecast(%aacplus(channels=2, samplerate=44100, bitrate=64), mount=radio_id,s)
 end
 
 # This function takes a metadata,
