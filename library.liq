@@ -22,9 +22,6 @@ end
 def update_title(m) = 
   # The title metadata
   title = m["title"]
-  # Our addition
-  # content = list.hd(get_process_lines("cat /home/mark/radio/radio_name"))
-  # content = list.hd(get_process_lines("http://192.168.0.108/index.php/track"))
   
   # If title is empty
   if title == "" then
