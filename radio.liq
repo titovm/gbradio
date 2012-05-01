@@ -17,7 +17,7 @@ set("server.telnet.bind_addr","0.0.0.0")
   latening = playlist(reload = 1800, "/home/music/19-01")
 
   # Promo source
-  promo = playlist(reload = 5000, "/home/music/New")
+  promo = playlist(reload = 5000, mode = "random", "/home/music/New")
   timed_promo = delay(1200.,promo)
 
   # The jingle source
