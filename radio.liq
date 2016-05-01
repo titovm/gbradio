@@ -1,30 +1,31 @@
 #!/usr/local/bin/liquidsoap
 
-set("log.file.path","/usr/local/var/log/liquidsoap/radio.log")
+%include "library.liq"
+
+set("log.file.path","/usr/local/var/log/liquidsoap/"+radio_id+".log")
 set("init.daemon",true)
 set("log.stdout",true)
 set("log.level",3)
 set("log.file",true)
-%include "library.liq"
 set("server.telnet",true)
 set("server.telnet.bind_addr","0.0.0.0")
 
 # The file source
-night = playlist(reload = 1800, "/home/music/01-09")
-morning = playlist(reload = 1800, "/home/music/09-12")
-day = playlist(reload = 1800, "/home/music/12-17")
-evening = playlist(reload = 1800, "/home/music/17-19")
-latening = playlist(reload = 1800, "/home/music/19-01")
+night = playlist(reload = 1800, "../music/01-09")
+morning = playlist(reload = 1800, "../music/09-12")
+day = playlist(reload = 1800, "../music/12-17")
+evening = playlist(reload = 1800, "../music/17-19")
+latening = playlist(reload = 1800, "../music/19-01")
 
 # Promo source
-promo = playlist(reload = 5000, mode = "random", "/home/music/New")
+promo = playlist(reload = 5000, mode = "random", "../music/New")
 timed_promo = delay(1200.,promo)
 
 # The jingle source
-jingles = playlist(reload = 5000, "/home/music/jingles/")
+jingles = playlist(reload = 5000, "../music/jingles/")
 
 # The main fallback
-default = single("/home/music/stepping.mp3")
+default = single("../music/stepping.mp3")
 
 s = fallback([
 	switch([
