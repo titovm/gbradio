@@ -3,7 +3,7 @@
 %include "config"
 %include "library.liq"
 
-set("log.file.path","/usr/local/var/log/liquidsoap/"+radio_id+".log")
+set("log.file.path","/usr/local/var/log/liquidsoap/"+=radio_id+".log")
 set("init.daemon",true)
 set("log.stdout",true)
 set("log.level",3)
