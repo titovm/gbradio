@@ -39,7 +39,7 @@ end
 def my_safe(s) =
   # We assume that festival is installed and
   # functional in liquidsoap
-  security = single("../music/stepping.mp3")
+  security = single("../stepping.mp3")
 
   # We return a fallback where the original
   # source has priority over the security
