@@ -10,7 +10,7 @@ def apply_metadata(m) =
 end
 
 # Our custom request function
-def get_request() = 
+def get_request() =
   # Get the URI
   uri = list.hd(get_process_lines("cat /tmp/request"))
   # Create a request
@@ -19,10 +19,10 @@ end
 
 # This function updates the title metadata with
 # the content of "/tmp/metadata"
-def update_title(m) = 
+def update_title(m) =
   # The title metadata
   title = m["title"]
-  
+
   # If title is empty
   if title == "" then
     [("title",radio_name)]
@@ -56,13 +56,13 @@ def outputs(s) =
   # with common parameters. The resulting function
   # is stored in a new definition of output.icecast,
   # but this could be my_icecast or anything.
-  output.icecast = output.icecast(id=radio_id, name=radio_name, host=radio_host, 
+  output.icecast = output.icecast(id=radio_id, name=radio_name, host=radio_host,
                                   password=radio_pass, url=radio_url)
 
   # An output in ogg/vorbis to the "my_radio.ogg"
   # mountpoint:
   # output.icecast(%vorbis, mount="radio1.ogg",s)
-  
+
   # An output in mp3 at 128kbits to the "my_radio"
   # mountpoint:
   # output.icecast(%mp3(bitrate=128), mount="my_radio",s)
@@ -80,7 +80,7 @@ end
 # check if it is of type "file"
 # and add the replay_gain metadata in
 # this case
-def add_replaygain(m) = 
+def add_replaygain(m) =
   # Get the type
   type = m["type"]
   # The replaygain script is located there
@@ -90,7 +90,7 @@ def add_replaygain(m) =
 
   # If type = "song", proceed:
   if type == "song" then
-    info = list.hd(get_process_lines("#{script} #{filename}")) 
+    info = list.hd(get_process_lines("#{script} #{filename}"))
     [("replay_gain",info)]
   # Otherwise add nothing
   else
@@ -98,11 +98,11 @@ def add_replaygain(m) =
   end
 end
 
-# Our custom crossfade that 
+# Our custom crossfade that
 # only crossfade betwee tracks
-def my_crossfade(s) = 
+def my_crossfade(s) =
   # Our transition function
-  def f(_,_, old_m, new_m, old, new) = 
+  def f(_,_, old_m, new_m, old, new) =
     # If none of old and new have "type" metadata
     # with value "jingles", we crossfade the source:
     if old_m["type"] != "jingle" and new_m["type"] != "jingle" then
