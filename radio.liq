@@ -1,5 +1,6 @@
 #!/usr/local/bin/liquidsoap
 
+%include "config"
 %include "library.liq"
 
 set("log.file.path","/usr/local/var/log/liquidsoap/"+radio_id+".log")
