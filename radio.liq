@@ -6,7 +6,7 @@
 set("log.file.path","/usr/local/var/log/liquidsoap/#{radio_id}.log")
 set("init.daemon",true)
 set("log.stdout",true)
-set("log.level",3)
+set("log.level",4)
 set("log.file",true)
 set("server.telnet",true)
 set("server.telnet.bind_addr","0.0.0.0")
